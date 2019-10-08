@@ -1,38 +1,22 @@
-# Project Starter
+[![Build Status](https://travis-ci.com/alperg/project2-starter-auth.svg?branch=master)](https://travis-ci.com/alperg/project2-starter-auth)
 
-In this activity we will add the provided boilerplate to group project repos.
+# Project 2 Starter with Auth
 
-## Instructions
+A simple starter project with Express, Handlebars, Sequelize, Passport and Local Auth.
 
-* Only one member of each group should complete this activity while the others watch.
+## Live link:
+https://project2-starter-auth.herokuapp.com/
 
-* Copy the entire [Unsolved](Unsolved) folder to another location on your computers &mdash; wherever you would like your local copy of the group project to be.
+## Requirements:
 
-* Rename the copied "Unsolved" folder to the name of your project.
+* Add `.env` file with the following content:
 
-* Open the copied project folder's `package.json` file and change its `name` property to the name of your project.
-
-* CD to the root of the copied project folder with your terminal and run the following commands:
-
-  ```
-  git init
-  git add .
-  git commit -m "Initial commit"
-  ```
-
-* Then copy the GitHub repo's remote SSH URL (the same URL you'd use to clone the repo).
-
-* Run the following commands in your terminal, replacing <remote-url> with your GitHub repo's remote SSH URL.
-
-  ```
-  git remote add origin <remote-url>
-  git push origin master
-  ```
-
-* If completed successfully you should see all of the files uploaded to GitHub.
-
-* All other group members should now clone the repo.
-
-* Discuss as a group:
-
-  * How would you now add changes to this project?
+```
+SEQUELIZE_USER=your_mysql_db_user
+SEQUELIZE_PASSWORD=your_mysql_db_password
+SEQUELIZE_HOST=your_mysql_db_host
+AUTH_SECRET=your_auth_secret_key
+ADMIN_USER_PWD=admin_password
+USER_PWD=user_pwd
+FORCE_SYNC=true_or_false
+```
