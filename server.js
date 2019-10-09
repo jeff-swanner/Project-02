@@ -9,6 +9,7 @@ const helmet = require('helmet');
 const PORT = process.env.PORT || 3333;
 const app = express();
 const db = require('./models');
+const test = 1234;
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
@@ -24,6 +25,7 @@ app.use(express.static('public'));
 
 require('./config/passport')(db, app, passport); // pass passport for configuration
 
+// PROBABLY WILL HAVE TO CHANGE THESE LINES
 // Define our routes
 app.use('/api', require('./routes/apiRoutes')(passport, db));
 app.use(require('./routes/htmlRoutes')(db));
