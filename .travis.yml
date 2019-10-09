@@ -3,10 +3,9 @@ node_js: "10"
 branches:
   only:
   - master
+services: mysql
 cache:
   directories:
     - node_modules
-services: 
-  - mysql
 before_install:
-  - mysql -e 'CREATE DATABASE project2_dev;'
+  - mysql -e 'CREATE DATABASE project2_test;'
