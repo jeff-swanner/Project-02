@@ -11,6 +11,8 @@ const app = express();
 const db = require('./models');
 const test = 1234;
 
+console.log(test);
+
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
