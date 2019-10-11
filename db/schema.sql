@@ -1,1 +1,1 @@
-create database project2_dev;
+create database fashion_trader;
