@@ -13,9 +13,9 @@ module.exports = (db, app, passport) => {
       table: 'Session',
       extendDefaultFields: (defaults, session) => {
         const userId = session && session.passport && session.passport.user && session.passport.user.id;
-        // console.log('-------------------------------------------------------');
-        // console.log('userId:', userId);
-        // console.log('-------------------------------------------------------');
+        console.log('-------------------------------------------------------');
+        console.log('userId:', userId);
+        console.log('-------------------------------------------------------');
         if (userId) {
           return {
             data: defaults.data,

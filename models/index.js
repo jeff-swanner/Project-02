@@ -7,7 +7,7 @@ const config = require(path.join(__dirname, '/../config/config.js'))[env];
 const db = {};
 let sequelize;
 
-config.details.operatorsAliases = {
+config.details.operatorAliases = {
   $and: Sequelize.Op.and,
   $or: Sequelize.Op.or,
   $eq: Sequelize.Op.eq,

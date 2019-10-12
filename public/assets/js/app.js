@@ -114,12 +114,12 @@ $('#login').on('click', function (event) {
   event.preventDefault();
 
   const user = {
-    email: $('#email').val().trim(),
-    password: $('#user_password').val().trim()
+    email: $('#user-email').val().trim(),
+    password: $('#user-password').val().trim()
   };
 
   $.post('/api/login', user, (result) => {
-    // console.log(result);
+    console.log(result);
     if (result.loggedIn) {
       $(document.location).attr('href', '/dashboard');
     } else {
