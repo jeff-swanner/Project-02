@@ -9,11 +9,12 @@
         <hr>
         <div>
           {{#if isloggedin}}
-            You are logged in as {{user.firstName}}
-            <a href="/logout"> <button class="ui button">Logout</button></a>
+            <h3>You are logged in as {{user.firstName}}</h3>
+            <br>
+            <a href="/logout"> <div class="ui teal button" type="submit">Logout</div></a>
           {{else}}
             <p>You must log in to use this app.</p>
-            <a href="/register" class="ui huge primary button">
+            <a href="/register" class="ui huge teal button" type="submit">
               Get Started
               <i class="right arrow icon"></i>
             </a>
@@ -36,7 +37,7 @@
         </div>
         <div class="row">
           <div class="center aligned column">
-            <a href="/about" class="ui huge button">Check It Out</a>
+            <a href="/about" class="ui huge teal button" type="submit">Check It Out</a>
           </div>
         </div>
       </div>
@@ -59,7 +60,7 @@
       <div class="ui text container">
         <h3 class="ui header">We will continue to dominate the fashion world.</h3>
         <p>Instead of being weak like our competitors, we have found a way to master the art of fashion and content creation. We are massive, monolithic, and definitely worthy of your attention.</p>
-        <a href="/about" class="ui large button">Read More</a>
+        <a href="/about" class="ui large teal button" type="submit">Read More</a>
         <h4 class="ui horizontal header divider">
         <a href="#">CASE STUDIES</a>
         </h4>
