@@ -1,6 +1,6 @@
 // Get references to page elements
-const $exampleText = $('#example-text');
-const $exampleDescription = $('#example-description');
+const $itemName = $('#item-name');
+const $itemDescription = $('#item-description');
 const $submitBtn = $('#submit');
 const $exampleList = $('#example-list');
 
@@ -65,8 +65,8 @@ const handleFormSubmit = function (event) {
   event.preventDefault();
 
   const example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    text: $itemName.val().trim(),
+    description: $itemDescription.val().trim()
   };
 
   if (!(example.text && example.description)) {
@@ -78,8 +78,8 @@ const handleFormSubmit = function (event) {
     refreshExamples();
   });
 
-  $exampleText.val('');
-  $exampleDescription.val('');
+  $itemName.val('');
+  $itemDescription.val('');
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked

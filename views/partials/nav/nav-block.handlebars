@@ -1,26 +1,18 @@
-<div class="ui large menu top inverted">
+<div class="ui large menu top inverted" id="navbar">
   <div class="ui container">
-    <a class="item" href="/">
-      Fashion Trader
     <a href="/" class="item">Home</a>
     <a href="/about" class="item">About</a>
     <div class="right menu">
       {{#if isloggedin}}
-        <div class="item">
-          <a class="nav-link" href="/example">Example page</a>
-        </div>
-        <div class="item">
-          <a class="nav-link" href="/profile">My Profile</a>
-        </div>
-        <div class="item">
-          <a class="nav-link" href="/logout">Logout</a>
-        </div>
+          <a class="item" href="/example">Example page</a>
+          <a class="item" href="/profile">My Profile</a>
+          <a class="item" href="/logout">Logout</a>
       {{else}}
         <div class="item">
-          <a class="ui button" href="#" id="login-modal">Login</a>
+          <a class="ui button" type="submit" href="#" id="login-modal">Login</a>
         </div>
         <div class="item">
-          <a class="ui primary button" href="/register" data-register={{register}}>Sign Up</a>
+          <a class="ui teal button" type="submit" href="/register" data-register={{register}}>Sign Up</a>
         </div>
       {{/if}}
     </div>
