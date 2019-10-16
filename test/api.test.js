@@ -9,22 +9,22 @@ chai.use(chaiHttp);
 
 let request;
 
-describe('GET /api/examples', function () {
+describe('GET /api/items', function () {
   // Before each test begins, create a new request server for testing
-  // & delete all examples from the db
+  // & delete all items from the db
   beforeEach(function () {
     request = chai.request(server);
     return db.sequelize.sync({ force: true });
   });
 
-  it('should find all examples', function (done) {
-    // Add some examples to the db to test with
-    db.Example.bulkCreate([
-      { text: 'First Example', description: 'First Description' },
-      { text: 'Second Example', description: 'Second Description' }
+  it('should find all items', function (done) {
+    // Add some items to the db to test with
+    db.Item.bulkCreate([
+      { id: 1000, user_id: 1000, department: 'First Department', product: 'First Product', price: 1000 },
+      { id: 2000, user_id: 2000, department: 'Second Department', product: 'Second Product', price: 2000 }
     ]).then(function () {
-      // Request the route that returns all examples
-      request.get('/api/examples').end(function (err, res) {
+      // Request the route that returns all items
+      request.get('/api/items').end(function (err, res) {
         const responseStatus = res.status;
         const responseBody = res.body;
 
@@ -41,11 +41,11 @@ describe('GET /api/examples', function () {
 
         expect(responseBody[0])
           .to.be.an('object')
-          .that.includes({ text: 'First Example', description: 'First Description' });
+          .that.includes({ id: 1000, user_id: 1000, department: 'First Department', product: 'First Product', price: 1000 });
 
         expect(responseBody[1])
           .to.be.an('object')
-          .that.includes({ text: 'Second Example', description: 'Second Description' });
+          .that.includes({ id: 2000, user_id: 2000, department: 'Second Department', product: 'Second Product', price: 2000 });
 
         // The `done` function is used to end any asynchronous tests
         done();
@@ -54,24 +54,27 @@ describe('GET /api/examples', function () {
   });
 });
 
-describe('POST /api/examples', function () {
+describe('POST /api/items', function () {
   // Before each test begins, create a new request server for testing
-  // & delete all examples from the db
+  // & delete all items from the db
   beforeEach(function () {
     request = chai.request(server);
     return db.sequelize.sync({ force: true });
   });
 
-  it('should save an example', function (done) {
+  it('should save an item', function (done) {
     // Create an object to send to the endpoint
     const reqBody = {
-      text: 'Example text',
-      description: 'Example description'
+      id: 3000,
+      user_id: 3000,
+      department: 'Third Department',
+      product: 'Third Product',
+      price: 3000
     };
 
     // POST the request body to the server
     request
-      .post('/api/examples')
+      .post('/api/items')
       .send(reqBody)
       .end(function (err, res) {
         const responseStatus = res.status;

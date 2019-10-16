@@ -1,0 +1,20 @@
+{{> nav/nav-block}}
+
+<div class="ui container">
+  <div class="eight column">
+    <div class="ui card">
+      <div class="header" id="card-header"><h2>{{item.text}}</h2></div>
+      <div class="content" id="card-content">
+        <p>
+          <strong>ID</strong>: {{item.id}}</p>
+        <p>
+          <strong>Name</strong>: {{item.text}}</p>
+        <p>
+          <strong>Description:</strong> {{item.description}}</p>
+          <a href="/item">← Back To Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{> modal/login-block}}

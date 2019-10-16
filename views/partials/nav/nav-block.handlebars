@@ -1,13 +1,18 @@
 <div class="ui large menu top inverted" id="navbar">
   <div class="ui container">
-    <a href="/" class="item">Home</a>
-    <a href="/about" class="item">About</a>
-     <a class="item" href="/shop">Shop</a>
+    <div class="left menu">
+      <a href="/" class="item">Home</a>
+      <a href="/about" class="item">About</a>
+      <a class="item" href="/shop">Shop</a>
+    </div>
+    <div class="center aligned menu">
+      <h1 class="item" id="main-logo"><a href="/">FASHION TRADER</a></h1>
+    </div>
     <div class="right menu">
       {{#if isloggedin}}
-          <a class="item" href="/example">Example page</a>
-          <a class="item" href="/profile">My Profile</a>
-          <a class="item" href="/logout">Logout</a>
+        <a class="item" href="/item">My Items</a>
+        <a class="item" href="/profile">My Profile</a>
+        <a class="item" href="/logout">Logout</a>
       {{else}}
         <div class="item">
           <a class="ui button" type="submit" href="#" id="login-modal">Login</a>
