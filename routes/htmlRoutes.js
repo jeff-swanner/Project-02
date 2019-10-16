@@ -95,6 +95,22 @@ module.exports = (db) => {
     });
   });
 
+  // Shop page to display all products
+
+  router.get('/shop', function (req, res) {
+    // if (req.isAuthenticated()) {
+    db.Example.findAll({}).then(function (dbExamples) {
+      res.render('shop', {
+        msg: 'This is where you shop',
+        examples: dbExamples
+      });
+    });
+    // } 
+    // else {
+    //   res.redirect('/');
+    // }
+  });
+
   // Render 404 page for any unmatched routes
   router.get('*', function (req, res) {
     res.render('404');
