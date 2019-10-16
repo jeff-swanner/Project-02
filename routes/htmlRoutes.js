@@ -105,7 +105,7 @@ module.exports = (db) => {
         examples: dbExamples
       });
     });
-    // } 
+    // }
     // else {
     //   res.redirect('/');
     // }
