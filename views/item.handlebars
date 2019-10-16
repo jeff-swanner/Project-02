@@ -16,9 +16,9 @@
           <div class="ui teal submit button" type="submit" id="submit">Submit Item</div>
         </div>
         
-        <div id="example-list" class="ui items">
+        <div id="item-list" class="ui items">
           <h1>My Items:</h1>
-          {{#each examples}}
+          {{#each items}}
           <div data-id="{{this.id}}" class="item">
             <div class="image">
               <img src="#">
@@ -28,7 +28,7 @@
               <div class="meta">
                 <span>Description</span>
                   <div class="description">
-                    <p><a href="example/{{this.id}}">{{this.description}}</a></p>
+                    <p><a href="item/{{this.id}}">{{this.description}}</a></p>
                   </div>
                   <div class="extra">
                     Additional Details
@@ -45,7 +45,7 @@
   </div>
 </div>
 
-<script src="/assets/js/example.js"></script>
+<script src="/assets/js/item.js"></script>
 
 {{> modal/login-block}}
 

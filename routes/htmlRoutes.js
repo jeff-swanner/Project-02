@@ -56,13 +56,13 @@ module.exports = (db) => {
     }
   });
 
-  // Load example index page
+  // Load item index page
   router.get('/item', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Item.findAll({}).then(function (dbExamples) {
+      db.Item.findAll({}).then(function (dbItems) {
         res.render('item', {
           msg: 'Welcome!',
-          examples: dbExamples
+          item: dbItems
         });
       });
     } else {
@@ -70,12 +70,12 @@ module.exports = (db) => {
     }
   });
 
-  // Load example page and pass in an example by id
-  router.get('/example/:id', function (req, res) {
+  // Load item page and pass in an item by id
+  router.get('/item/:id', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Item.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-        res.render('example-detail', {
-          example: dbExample
+      db.Item.findOne({ where: { id: req.params.id } }).then(function (dbItem) {
+        res.render('item-detail', {
+          item: dbItem
         });
       });
     } else {
@@ -99,10 +99,10 @@ module.exports = (db) => {
 
   router.get('/shop', function (req, res) {
     // if (req.isAuthenticated()) {
-    db.Example.findAll({}).then(function (dbExamples) {
+    db.Item.findAll({}).then(function (dbItems) {
       res.render('shop', {
         msg: 'This is where you shop',
-        examples: dbExamples
+        items: dbItems
       });
     });
     // }

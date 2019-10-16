@@ -2,46 +2,46 @@
 const $itemName = $('#item-name');
 const $itemDescription = $('#item-description');
 const $submitBtn = $('#submit');
-const $exampleList = $('#example-list');
+const $itemList = $('#item-list');
 
 // The API object contains methods for each kind of request we'll make
 const API = {
-  saveExample: function (example) {
+  saveItem: function (item) {
     return $.ajax({
       headers: {
         'Content-Type': 'application/json'
       },
       type: 'POST',
-      url: 'api/examples',
-      data: JSON.stringify(example)
+      url: 'api/items',
+      data: JSON.stringify(item)
     });
   },
-  getExamples: function () {
+  getItems: function () {
     return $.ajax({
-      url: 'api/examples',
+      url: 'api/items',
       type: 'GET'
     });
   },
-  deleteExample: function (id) {
+  deleteItem: function (id) {
     return $.ajax({
-      url: 'api/examples/' + id,
+      url: 'api/items/' + id,
       type: 'DELETE'
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-const refreshExamples = function () {
-  API.getExamples().then(function (data) {
-    const $examples = data.map(function (example) {
+// refreshItemss gets new itemss from the db and repopulates the list
+const refreshItems = function () {
+  API.getItems().then(function (data) {
+    const $Items = data.map(function (item) {
       const $a = $('<a>')
-        .text(example.text)
-        .attr('href', '/example/' + example.id);
+        .text(item.text)
+        .attr('href', '/item/' + item.id);
 
       const $li = $('<li>')
         .attr({
           class: 'list-group-item',
-          'data-id': example.id
+          'data-id': item.id
         })
         .append($a);
 
@@ -54,44 +54,44 @@ const refreshExamples = function () {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $itemList.empty();
+    $itemList.append($Items);
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+// handleFormSubmit is called whenever we submit a new item
+// Save the new item to the db and refresh the list
 const handleFormSubmit = function (event) {
   event.preventDefault();
 
-  const example = {
+  const item = {
     text: $itemName.val().trim(),
     description: $itemDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert('You must enter an example text and description!');
+  if (!(item.text && item.description)) {
+    alert('You must enter an item text and description!');
     return;
   }
 
-  API.saveExample(example).then(function () {
-    refreshExamples();
+  API.saveitem(item).then(function () {
+    refreshItems();
   });
 
   $itemName.val('');
   $itemDescription.val('');
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
+// handleDeleteBtnClick is called when an item's delete button is clicked
+// Remove the item from the db and refresh the list
 const handleDeleteBtnClick = function () {
   const idToDelete = $(this).parent().attr('data-id');
 
-  API.deleteExample(idToDelete).then(function () {
-    refreshExamples();
+  API.deleteitem(idToDelete).then(function () {
+    refreshItems();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
-$exampleList.on('click', '.delete', handleDeleteBtnClick);
+$itemList.on('click', '.delete', handleDeleteBtnClick);
