@@ -1,7 +1,15 @@
-USE project2_dev;
+USE fashion_trader;
 
-INSERT INTO Users (firstName, lastName, email, password, isAdmin)
-VALUES ("Joe", "Gates", "j@g.co", "$2b$10$afGmlGCU0AGEzZBILPyPWOfSclxjMxKocB8QXv8CqhN73IHUUp7Gi", true);
+INSERT INTO users(id, firstName, lastName, email, password)
+VALUES ("Jason", "Whited", "j@w.co", "abcd");
+VALUES ("Jeff", "Swanner", "je@s.co", "efgh");
+VALUES ("Frank", "Zachary", "f@gz.co", "ijkl");
+VALUES ("Krishti", "Bhowmick", "k@b.co", "mnop");
 
-INSERT INTO Users (firstName, lastName, email, password, isAdmin)
-VALUES ("Jane", "Jobs", "j@j.co", "$2b$10$afGmlGCU0AGEzZBILPyPWOfSclxjMxKocB8QXv8CqhN73IHUUp7Gi", false);
+INSERT INTO items(id, user_id, department, product, price)
+VALUES ("4", "Shoes", "Sandals", 45);
+VALUES ("4", "Dresses", "A-line", 66);
+VALUES ("2", "Shoes", "Boots", 88);
+VALUES ("1", "Accesories", "Belt", 20);
+VALUES ("3", "Pants", "Slacks", 50);
+VALUES ("3", "Shirts", "Graphic shirt", 15);
