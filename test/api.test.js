@@ -20,8 +20,8 @@ describe('GET /api/items', function () {
   it('should find all items', function (done) {
     // Add some items to the db to test with
     db.Item.bulkCreate([
-      { text: 'First Item', description: 'First Description' },
-      { text: 'Second Item', description: 'Second Description' }
+      { id: 1000, user_id: 1000, department: 'First Department', product: 'First Product', price: 1000 },
+      { id: 2000, user_id: 2000, department: 'Second Department', product: 'Second Product', price: 2000 }
     ]).then(function () {
       // Request the route that returns all items
       request.get('/api/items').end(function (err, res) {
@@ -41,11 +41,11 @@ describe('GET /api/items', function () {
 
         expect(responseBody[0])
           .to.be.an('object')
-          .that.includes({ text: 'First Item', description: 'First Description' });
+          .that.includes({ id: 1000, user_id: 1000, department: 'First Department', product: 'First Product', price: 1000 });
 
         expect(responseBody[1])
           .to.be.an('object')
-          .that.includes({ text: 'Second Item', description: 'Second Description' });
+          .that.includes({ id: 2000, user_id: 2000, department: 'Second Department', product: 'Second Product', price: 2000 });
 
         // The `done` function is used to end any asynchronous tests
         done();
@@ -65,8 +65,11 @@ describe('POST /api/items', function () {
   it('should save an item', function (done) {
     // Create an object to send to the endpoint
     const reqBody = {
-      text: 'Item text',
-      description: 'Item description'
+      id: 3000,
+      user_id: 3000,
+      department: 'Third Department',
+      product: 'Third Product',
+      price: 3000
     };
 
     // POST the request body to the server
