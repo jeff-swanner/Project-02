@@ -57,10 +57,10 @@ module.exports = (db) => {
   });
 
   // Load example index page
-  router.get('/example', function (req, res) {
+  router.get('/item', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Example.findAll({}).then(function (dbExamples) {
-        res.render('example', {
+      db.Item.findAll({}).then(function (dbExamples) {
+        res.render('item', {
           msg: 'Welcome!',
           examples: dbExamples
         });
@@ -73,7 +73,7 @@ module.exports = (db) => {
   // Load example page and pass in an example by id
   router.get('/example/:id', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
+      db.Item.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
         res.render('example-detail', {
           example: dbExample
         });

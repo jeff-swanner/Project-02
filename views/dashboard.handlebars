@@ -1,11 +1,10 @@
 {{> nav/nav-block}}
-
-<div class="pusher">
-  <div class="full height">
-    <div class="ui text container" id="main-container">
-      <div class="ui raised very padded text container segment" class="ui grid container">
-        <h1 class="lead">Welcome to <strong>Fashion Trader</strong></h1><br>
-        <h3>A community of Fashion Traders</h3>
+    
+<div class="masthead segmnet bg-8">
+  <div class="ui text container">
+    <div class="ui raised very padded text container segment" class="ui grid container" align="center">
+        <h1 class="lead" align="center">Welcome to <strong>Fashion Trader</strong></h1><br>
+        <h3 align="center">A community of Fashion Traders</h3>
         <hr>
         <div>
           {{#if isloggedin}}
@@ -13,91 +12,94 @@
             <br>
             <a href="/logout"> <div class="ui teal button" type="submit">Logout</div></a>
           {{else}}
-            <p>You must log in to use this app.</p>
+            <p align="center">You must log in to use this app.</p>
             <a href="/register" class="ui huge teal button" type="submit">
               Get Started
               <i class="right arrow icon"></i>
             </a>
-           {{/if}}
+          {{/if}}
             <h5 id="login-err-msg"></h5>
-          </div>
-        </div>
-    </div>
-    <div class="ui vertical stripe segment">
-      <div class="ui middle aligned stackable grid container">
-        <div class="row">
-          <div class="eight wide column">
-            <h3 class="ui header">Lorem Ipsum</h3>
-            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-          </div>
-          <div class="six wide right floated column">
-            <h3 class="ui header">Lorem Ipsum</h3>
-            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="center aligned column">
-            <a href="/about" class="ui huge teal button" type="submit">Check It Out</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="ui vertical stripe quote segment">
-      <div class="ui equal width stackable internally celled grid">
-        <div class="center aligned row">
-          <div class="column">
-            <h3>"Fashion Trader is amazing!"</h3>
-            <p>- Literally everyone, talking about this app</p>
-          </div>
-          <div class="column">
-            <h3>"All other fashion apps are imitators."</h3>
-            <p><b>Nan</b> - a really smart person</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="ui vertical stripe segment">
-      <div class="ui text container">
-        <h3 class="ui header">We will continue to dominate the fashion world.</h3>
-        <p>Instead of being weak like our competitors, we have found a way to master the art of fashion and content creation. We are massive, monolithic, and definitely worthy of your attention.</p>
-        <a href="/about" class="ui large teal button" type="submit">Read More</a>
-        <h4 class="ui horizontal header divider">
-        <a href="#">CASE STUDIES</a>
-        </h4>
-        <h3 class="ui header">Did we tell you we're awesome?</h3>
-      </div>
-    </div>
-    <div class="ui inverted vertical footer segment">
-      <div class="ui container">
-        <div class="ui stackable inverted divided equal height stackable grid">
-          <div class="three wide column">
-            <h4 class="ui inverted header">About</h4>
-            <div class="ui inverted link list">
-              <a href="#" class="item">
-                Sitemap
-              </a>
-              <a href="#" class="item">
-                Contact Us
-              </a>
-            </div>
-          </div>
-          <div class="three wide column">
-            <h4 class="ui inverted header">Services</h4>
-            <div class="ui inverted link list">
-              <a href="#" class="item">
-                FAQ
-              </a>
-              <a href="#" class="item">
-                How To Use
-              </a>
-            </div>
-          </div>
-          <div class="seven wide column">
-            <h4 class="ui inverted header">Fashion Trader</h4>
-            <p>&COPY; 2019</p>
-          </div>
         </div>
       </div>
     </div>
   </div>
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="eight wide column">
+        <h3 class="ui header">Lorem Ipsum</h3>
+        <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+      </div>
+      <div class="six wide right floated column">
+        <h3 class="ui header">Lorem Ipsum</h3>
+        <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center aligned column">
+        <a href="/about" class="ui huge teal button" type="submit">Check It Out</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui vertical stripe quote segment">
+  <div class="ui equal width stackable internally celled grid">
+    <div class="center aligned row">
+      <div class="column">
+        <h3>"Fashion Trader is amazing!"</h3>
+        <p>- Literally everyone, talking about this app</p>
+      </div>
+      <div class="column">
+        <h3>"All other fashion apps are imitators."</h3>
+        <p><b>Nan</b> - a really smart person</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui vertical stripe segment">
+  <div class="ui center aligned text container">
+    <h3 class="ui header">We will continue to dominate the fashion world.</h3>
+    <p>Instead of being weak like our competitors, we have found a way to master the art of fashion and content creation. We are massive, monolithic, and definitely worthy of your attention.</p>
+    <a href="/about" class="ui large teal button" type="submit">Read More</a>
+    <h4 class="ui horizontal header divider">
+    <a href="#">CASE STUDIES</a>
+    </h4>
+    <h3 class="ui header">Did we tell you we're awesome?</h3>
+  </div>
+</div>
+<div class="ui inverted vertical footer segment">
+  <div class="ui container">
+    <div class="ui stackable inverted divided equal height stackable grid">
+      <div class="three wide column">
+        <h4 class="ui inverted header">About</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">
+            Sitemap
+          </a>
+          <a href="#" class="item">
+            Contact Us
+          </a>
+        </div>
+      </div>
+      <div class="three wide column">
+        <h4 class="ui inverted header">Services</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">
+            FAQ
+          </a>
+          <a href="#" class="item">
+            How To Use
+          </a>
+        </div>
+      </div>
+      <div class="seven wide column">
+        <h4 class="ui inverted header">Fashion Trader</h4>
+        <p>&COPY; 2019</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 </div>
