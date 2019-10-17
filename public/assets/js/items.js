@@ -1,6 +1,7 @@
 // Get references to page elements
 const $itemName = $('#item-name');
-const $itemDescription = $('#item-description');
+const $itemCategory = $('#item-category');
+const $itemPrice = $('#item-price');
 const $submitBtn = $('#submit');
 const $itemList = $('#item-list');
 
@@ -35,7 +36,7 @@ const refreshItems = function () {
   API.getItems().then(function (data) {
     const $Items = data.map(function (item) {
       const $a = $('<a>')
-        .text(item.text)
+        .text(item.product)
         .attr('href', '/item/' + item.id);
 
       const $li = $('<li>')
@@ -46,13 +47,15 @@ const refreshItems = function () {
         .append($a);
 
       const $button = $('<button>')
-        .addClass('btn btn-danger float-right delete')
+        .addClass('ui button')
         .text('ｘ');
 
       $li.append($button);
 
       return $li;
     });
+
+    console.log($Items);
 
     $itemList.empty();
     $itemList.append($Items);
@@ -65,21 +68,25 @@ const handleFormSubmit = function (event) {
   event.preventDefault();
 
   const item = {
-    text: $itemName.val().trim(),
-    description: $itemDescription.val().trim()
+    product: $itemName.val().trim(),
+    category: $itemCategory.val(),
+    price: parseFloat($itemPrice.val())
   };
 
-  if (!(item.text && item.description)) {
-    alert('You must enter an item text and description!');
+  console.log(item);
+
+  if (!(item.product && item.category && item.price)) {
+    alert('You must select a category, then enter a product name and price!');
     return;
   }
 
-  API.saveitem(item).then(function () {
+  API.saveItem(item).then(function () {
     refreshItems();
   });
 
   $itemName.val('');
-  $itemDescription.val('');
+  $itemCategory.val('');
+  $itemPrice.val('');
 };
 
 // handleDeleteBtnClick is called when an item's delete button is clicked

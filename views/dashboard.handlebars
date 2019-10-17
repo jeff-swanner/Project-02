@@ -1,28 +1,59 @@
 {{> nav/nav-block}}
-<div class="masthead segmnet bg-8">
-  <div class="ui text container">
-    <div class="ui raised very padded text container segment" class="ui grid container" align="center">
-        <h1 class="lead" align="center">Welcome to <strong>Fashion Trader</strong></h1><br>
-        <h3 align="center">A community of Fashion Traders</h3>
-        <hr>
-        <div>
-          {{#if isloggedin}}
-            <h3>You are logged in as {{user.firstName}}</h3>
-            <br>
-            <a href="/logout"> <div class="ui teal button" type="submit">Logout</div></a>
-          {{else}}
-            <p align="center">You must log in to use this app.</p>
-            <a href="/register" class="ui huge teal button" type="submit">
-              Get Started
-              <i class="right arrow icon"></i>
-            </a>
-          {{/if}}
-            <h5 id="login-err-msg"></h5>
+    
+<div class="ui masthead">
+  <div class="ui raised very padded text container segment" class="ui grid container" align="center">
+    <h1 class="lead" align="center">Welcome to <strong>Fashion Trader</strong></h1>
+    <h3 align="center">A community of Fashion Traders</h3>
+    <hr>
+    <div>
+      {{#if isloggedin}}
+        <h3>You are logged in as {{user.firstName}}</h3>
+        <br>
+        <div class="ui three item menu">
+          <a class="item" href="/shop"><i class="tags icon"></i>Shop Items</a>
+          <a class="item" href="/item"><i class="plus icon"></i>Post Items</a>
+          <a class="item" href="/profile"><i class="user icon"></i>Go To My Profile</a>
+        </div>
+      {{else}}
+        <p align="center">You must log in to use this app.</p>
+        <h5 id="login-err-msg"></h5>
+        <a href="/register"><button class="ui huge teal button" type="submitß">Get Started
+        <i class="right arrow icon"></i></button></a>
+    </div>
+  </div>
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <h3>Fashion Trader</h3><p>is the web's newest way to buy and sell new or gently-worn clothes and accessories. Create an account, log in, shop for the latest trends, upload your items that you would like to sell so that others can buy them. <br><br>Hang out. Be a part of the new great fashion-focused community!</p>
+        </div>
+        <div class="column">
+          <br>
+          <h3>"No matter what you're looking for, you can find it on Fashion Trader!"</h3>
+          <p>- Satisfied Fashion Trader Member</p>
         </div>
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 <div class="ui vertical stripe segment">
+=======
+  <div class="ui vertical stripe segment">
+    <div class="ui center aligned text container">
+      <h3 class="ui header">We are quickly changing the fashion world.</h3>
+      <p>We are a community of individuals who weak like our competitors, we have found a way to master the art of fashion and content creation. We are massive, monolithic, and definitely worthy of your attention.</p>
+    </div>
+  </div>
+</div>
+{{> footer/footer-block}}
+      {{/if}}
+        
+    </div>
+  </div>
+</div>
+
+{{!-- <div class="ui vertical stripe segment">
+>>>>>>> 585877b5c078440ac2c8ba1847860b9c357c0604
   <div class="ui middle aligned stackable grid container">
     <div class="row">
       <div class="eight wide column">
@@ -40,64 +71,4 @@
       </div>
     </div>
   </div>
-</div>
-<div class="ui vertical stripe quote segment">
-  <div class="ui equal width stackable internally celled grid">
-    <div class="center aligned row">
-      <div class="column">
-        <h3>"Fashion Trader is amazing!"</h3>
-        <p>- Literally everyone, talking about this app</p>
-      </div>
-      <div class="column">
-        <h3>"All other fashion apps are imitators."</h3>
-        <p><b>Nan</b> - a really smart person</p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ui vertical stripe segment">
-  <div class="ui center aligned text container">
-    <h3 class="ui header">We will continue to dominate the fashion world.</h3>
-    <p>Instead of being weak like our competitors, we have found a way to master the art of fashion and content creation. We are massive, monolithic, and definitely worthy of your attention.</p>
-    <a href="/about" class="ui large teal button" type="submit">Read More</a>
-    <h4 class="ui horizontal header divider">
-    <a href="#">CASE STUDIES</a>
-    </h4>
-    <h3 class="ui header">Did we tell you we're awesome?</h3>
-  </div>
-</div>
-<div class="ui inverted vertical footer segment">
-  <div class="ui container">
-    <div class="ui stackable inverted divided equal height stackable grid">
-      <div class="three wide column">
-        <h4 class="ui inverted header">About</h4>
-        <div class="ui inverted link list">
-          <a href="#" class="item">
-            Sitemap
-          </a>
-          <a href="#" class="item">
-            Contact Us
-          </a>
-        </div>
-      </div>
-      <div class="three wide column">
-        <h4 class="ui inverted header">Services</h4>
-        <div class="ui inverted link list">
-          <a href="#" class="item">
-            FAQ
-          </a>
-          <a href="#" class="item">
-            How To Use
-          </a>
-        </div>
-      </div>
-      <div class="seven wide column">
-        <h4 class="ui inverted header">Fashion Trader</h4>
-        <p>&COPY; 2019</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
+</div> --}}

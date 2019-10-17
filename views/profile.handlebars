@@ -1,50 +1,42 @@
 {{> nav/nav-block user=true register=false}}
 
-<div class="ui centered grid container">
-  <div class="three column row">
-    <div class="sixteen wide column">
-      <header align="center" class="header">
-        <h1>User Profile</h1>
-        <div class="userId">
-          <h3>Welcome, {{userInfo.firstName}}</h3>
-          <h5 id="user-number" data-useremail="{{userInfo.email}}">Account email: {{userInfo.email}}</h5>
-        </div>
-        <h3 id="update-err-msg"></h3>
-      </header>
+<div class="ui masthead" id="profile-container">
+  <div class="ui raised very padded text container segment">
+    <header class="ui header">
+      <h1>My Fashion Trader Profile</h1>
+    </header>
+    <div class="userId">
+      <h3>Welcome, {{userInfo.firstName}}</h3>
+      <h5 id="user-number" data-useremail="{{userInfo.email}}">Account email: {{userInfo.email}}</h5>
     </div>
-    <div class="four wide column">
-    </div>
-    <div class="eight wide column">
-      <form class="ui form" id="user-form">
-        <div class="field">
-          <label for="inputFirst">First Name</label>
-          <input type="text" class="form-control" id="inputFirst" value="{{userInfo.firstName}}" placeholder="John">
-          <label for="inputLast">Last Name</label>
-          <input type="text" class="form-control" id="inputLast" value="{{userInfo.lastName}}" placeholder="Doe">
-          <label for="inputPassword">Email</label>
-          <input type="text" class="form-control" id="inputEmail" value="{{userInfo.email}}">
-          <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" id="inputPassword" value="{{userInfo.password}}">
-        </div>
-      </form>
-    </div>
-    <div class="four wide column">
-    </div>
-    <div class="four wide column">
-    </div>
-    <div class="eight wide column">
-      <div class="ui teal button" type="submit" id="update-user" data-id="{{userInfo.id}}">
-        <i class="edit icon"></i>Update</div>
-        {{#unless userInfo.isAdmin}}
-          <div class="ui negative button" type="submit" id="delete-user"><i class="trash icon"></i>Delete</div>
-        {{/unless}}
-        <div class="ui button" type="submit" id="view-user" data-id="{{userInfo.id}}"><i class="redo icon"></i>Refresh</button>
-        </div>
-    </div>
-    <div class="four wide column">
-    </div>
+    <h3 id="update-err-msg"></h3>
+    <form class="ui centered form" id="user-form">
+      <div class="field">
+        <label for="inputFirst">First Name</label>
+        <input type="text" id="inputFirst" value="{{userInfo.firstName}}" placeholder="John">
+      </div>
+      <div class="field">
+        <label for="inputLast">Last Name</label>
+        <input type="text" id="inputLast" value="{{userInfo.lastName}}" placeholder="Doe">
+      </div>
+      <div class="field">
+        <label for="inputPassword">Email</label>
+        <input type="text" id="inputEmail" value="{{userInfo.email}}">
+      </div>
+      <div class="field">
+        <label for="inputPassword">Password</label>
+        <input type="password" id="inputPassword" value="{{userInfo.password}}">
+      </div>
+    </form>
+    <br>
+  <button class="ui teal button" type="submit" id="update-user" data-id="{{userInfo.id}}">
+    <i class="edit icon"></i>Update</button>
+    {{#unless userInfo.isAdmin}}
+      <button class="ui negative button" type="submit" id="delete-user"><i class="trash icon"></i>Delete</button>
+    {{/unless}}
+    <button class="ui button" type="submit" id="view-user" data-id="{{userInfo.id}}"><i class="redo icon"></i>
+      Refresh</button>
   </div>
-</div>
 
   <div class="ui modal" id="delete-user-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

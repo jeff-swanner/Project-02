@@ -61,7 +61,7 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Item.findAll({}).then(function (dbItems) {
         res.render('item', {
-          msg: 'Welcome!',
+          msg: 'My Fashion Trader Dashboard',
           item: dbItems
         });
       });
