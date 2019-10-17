@@ -1,22 +1,42 @@
-{{> nav/nav-block}}
+{{> nav/nav-block isloggedin=true}}
 
-<div class="ui container">
-    <div class="row">
-      <div class="eight wide column">
-        <h1>{{msg}}</h1>
-        <div class="ui form" action="POST">
-          <div class="field">
-            <label for="item-post">Post An Item to Fashion Trader!</label>
-            <input type="text" id="item-name" name="item name" placeholder="Item name">
+<div class="ui masthead" id="item-container">
+  <div class="ui raised very padded text container segment">
+    <header class="ui header">
+      <h1>{{msg}}</h1>
+    </header>
+    <form class="ui centered form" action="POST">
+      <div class="field">
+        <label for="ui selection dropdown">Choose A Category</label>
+        <div class="ui selection dropdown">
+          <input type="hidden" name="category" id="item-category">
+          <i class="dropdown icon"></i>
+          <div class="default text">Category
           </div>
-          <div class="ui form" id="item-entry">
-            <label for="item-description">Describe the Item</label>
-            <textarea id="item-description" name="item description" placeholder="Enter Item Description"></textarea>
+          <div class="menu">
+            <div class="item" data-value="1">Coats</div>
+            <div class="item" data-value="2">Pants</div>
+            <div class="item" data-value="3">Dresses</div>
+            <div class="item" data-value="4">Shirts</div>
+            <div class="item" data-value="5">Shoes</div>
+            <div class="item" data-value="6">Accessories</div>
           </div>
-          <div class="ui teal submit button" type="submit" id="submit">Submit Item</div>
         </div>
+      </div>
+      <div class="field">
+        <label for="item-post">Item Name</label>
+        <input type="text" id="item-name" name="item name" placeholder="Item Name">
+      </div>
+      <div class="field" id="item-entry">
+        <label for="item-post">Item Price</label>
+        <input type="text" id="item-price" name="item name" placeholder="Item Price">
+      </div>
+      <div class="ui large teal submit button" id="submit"><i class="plus icon"></i>Submit Item</div>
+    </form>
+  </div>
+</div>
         
-        <div id="item-list" class="ui items">
+  <div id="item-list" class="ui container">
           <h1>My Items:</h1>
           {{#each items}}
           <div data-id="{{this.id}}" class="item">
@@ -36,16 +56,18 @@
               </div>
             </div>
           </div>
-            <a href="/delete" class="ui button negative" type="submit" id="delete">
+            <a href="/delete" class="ui button negative" id="delete">
               <i class="trash alternate icon"></i>
             </a>
           {{/each}}
       </div>
     </div>
-  </div>
-</div>
 
-<script src="/assets/js/item.js"></script>
+<script>
+  $('.ui.dropdown')
+  .dropdown();
+</script>
+<script src="/assets/js/items.js"></script>
 
 {{> modal/login-block}}
 
