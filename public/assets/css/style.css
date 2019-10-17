@@ -121,3 +121,22 @@ a:hover {
   width: 100%;
   padding-bottom: 0;
 }
+
+#homeText {
+  color: white;
+}
+
+#homeContainer{
+ opacity: .75;
+
+}
+
+/* video background */
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
