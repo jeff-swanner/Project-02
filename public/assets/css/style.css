@@ -1,24 +1,75 @@
+body {
+  min-height: 100%;
+  position: relative;
+  clear: both;
+  overflow: auto;
+}
+
 #main-logo {
   font-family: 'Bangers', cursive;
   color: white;
-  font-size: 51px;
+  text-shadow: 2px 2px teal;
+  font-size: 45px;
   font-weight: normal;
+}
+
+#navbar {
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  z-index: 1;
+}
+
+#navbar a {
+  color: white;
 }
 
 #main-logo:hover {
   color: white;
-  text-shadow: 2px 2px teal;
 }
 
-.container {
+.ui.masthead {
+  padding-top: 132px;
+  padding-bottom: 132px;
+}
+
+.ui.three.item.menu {
+  background-color: #00adb5;
+}
+
+.ui.three.item.menu a {
+  color: white;
+}
+
+.ui.container {
   height: 100%;
   border-radius: .25rem;
+  position: relative;
+}
+
+#shop-container {
+  padding-top: 170px;
+}
+
+#item-container {
+  padding-top: 132px;
+}
+
+#profile-container {
+  padding-top: 132px;
+}
+
+#register-container {
+  padding-top: 132px;
 }
 
 #user-form, .header-wrap, #create-form, .create-user-wrap {
-  padding: 20px;
+  padding: 0;
   border-radius: 15px;
-  margin: 20px 0;
+  margin: 0;
 }
 
 a {
@@ -63,6 +114,14 @@ a:hover {
   margin-bottom: 20px;
 }
 
+
 img {
   width: 100px;
+
+.ui.inverted.vertical.footer.segment {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 0;
 }
