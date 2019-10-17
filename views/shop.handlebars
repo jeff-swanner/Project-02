@@ -1,70 +1,110 @@
 {{> nav/nav-block}}
 
-<div class="ui three column grid">
-  <div class="column">
-    <div class="ui fluid card">
-      <div class="image">
-        <img src="/images/avatar/large/daniel.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Coats</a>
-      </div>
+<div id="storeCategories">
+  <div class="ui three column grid">
+    <div class="column">
+      <a href="#" class="storeCategories" data-category="accessories">
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="/assets/img/accessories.jpg">
+          </div>
+          <div class="content">
+            <div class="header">Accessories</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="column">
+      <a href="#" class="storeCategories" data-category="coats">
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="/assets/img/coat.jpg">
+          </div>
+          <div class="content">
+            <div class="header">Coats</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="column">
+      <a href="#" class="storeCategories" data-category="dresses">
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="/assets/img/dress.jpg">
+          </div>
+          <div class="content">
+            <div class="header">Dresses</div>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
-  <div class="column">
-    <div class="ui fluid card">
-      <div class="image">
-        <img src="/images/avatar/large/helen.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Pants</a>
-      </div>
+  <div class="ui three column grid">
+    <div class="column">
+      <a href="#" class="storeCategories" data-category="pants">
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="/assets/img/pants.jpg">
+          </div>
+          <div class="content">
+            <div class="header">Pants</div>
+          </div>
+        </div>
+      </a>
     </div>
-  </div>
-  <div class="column">
-    <div class="ui fluid card">
-      <div class="image">
-        <img src="/images/avatar/large/elliot.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Dresses</a>
-      </div>
+    <div class="column">
+      <a href="#" class="storeCategories" data-category=".shirts">
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="/assets/img/shirts.jpeg">
+          </div>
+          <div class="content">
+            <div class="header">Shirts</div>
+          </div>
+        </div>
+      </a>
     </div>
-  </div>
-</div>
-<div class="ui three column grid">
-  <div class="column">
-    <div class="ui fluid card">
-      <div class="image">
-        <img src="/images/avatar/large/daniel.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Shirts</a>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="ui fluid card">
-      <div class="image">
-        <img src="/images/avatar/large/helen.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Shoes</a>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="ui fluid card">
-      <div class="image">
-        <img src="/images/avatar/large/elliot.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Accessories</a>
-      </div>
+    <div class="column">
+      <a href="#" class="storeCategories" data-category="shoes">
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="/assets/img/shoes.jpg">
+          </div>
+          <div class="content">
+            <div class="header">Shoes</div>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>
 
+<div class="productDisplay">
+  <div class="ui centered grid">
+    <div class="twelve wide stretched column">
+      <div class="ui link cards">
+        {{#each items}}
+            <div class="card transition hidden {{department}}">
+              <div class="image">
+                <img src="download.jpeg">
+              </div>
+              <div class="content">
+                  <div class="header">{{product}}</div>
+                  <div class="item">Price: ${{price}}</div>
+              </div>
+              <div class="extra content">
+                <a>
+                  <i class="shopping cart icon"></i>
+                  Add to Cart
+                </a>
+              </div>
+            </div>
+        {{/each}}
+          
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="/assets/js/shop.js"></script>
 
