@@ -1,7 +1,11 @@
 {{> nav/nav-block}}
-    
+
+<video autoplay muted loop id="myVideo">
+  <source src="/assets/images/video.mp4" type="video/mp4">
+</video>
+
 <div class="ui masthead">
-  <div class="ui raised very padded text container segment" class="ui grid container" align="center">
+  <div id="homeContainer" class="ui raised very padded text container segment" class="ui grid container" align="center">
     <h1 class="lead" align="center">Welcome to <strong>Fashion Trader</strong></h1>
     <h3 align="center">A community of Fashion Traders</h3>
     <hr>
@@ -24,10 +28,10 @@
   <div class="ui vertical stripe quote segment">
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
-        <div class="column">
+        <div class="column" id="homeText">
           <h3>Fashion Trader</h3><p>is the web's newest way to buy and sell new or gently-worn clothes and accessories. Create an account, log in, shop for the latest trends, upload your items that you would like to sell so that others can buy them. <br><br>Hang out. Be a part of the new great fashion-focused community!</p>
         </div>
-        <div class="column">
+        <div class="column" id="homeText">
           <br>
           <h3>"No matter what you're looking for, you can find it on Fashion Trader!"</h3>
           <p>- Satisfied Fashion Trader Member</p>
@@ -37,11 +41,12 @@
   </div>
   <div class="ui vertical stripe segment">
     <div class="ui center aligned text container">
-      <h3 class="ui header">We are quickly changing the fashion world.</h3>
-      <p>We are a community of individuals who weak like our competitors, we have found a way to master the art of fashion and content creation. We are massive, monolithic, and definitely worthy of your attention.</p>
+      <h3 class="ui header" id="homeText">We are quickly changing the fashion world.</h3>
+      <p id="homeText">We are a community of individuals who weak like our competitors, we have found a way to master the art of fashion and content creation. We are massive, monolithic, and definitely worthy of your attention.</p>
     </div>
   </div>
 </div>
+
 {{> footer/footer-block}}
       {{/if}}
         
