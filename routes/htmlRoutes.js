@@ -8,10 +8,10 @@ module.exports = (db) => {
         user: req.session.passport.user,
         isloggedin: req.isAuthenticated()
       };
-      console.log("test1"); 
+      console.log('test1');
       res.render('dashboard', user);
     } else {
-      console.log("test2"); 
+      console.log('test2'); 
       res.render('dashboard');
     }
   });
