@@ -39,13 +39,13 @@ describe('GET /api/items', function () {
           .to.be.an('array')
           .that.has.lengthOf(8);
 
-        expect(responseBody[0])
+        expect(responseBody[6])
           .to.be.an('object')
-          .that.includes({ id: 1000, user_id: 1000, department: 'First Department', product: 'First Product', price: 1000 });
+          .that.includes({ user_id: 1000, department: 'First Department', product: 'First Product', price: 1000 });
 
-        expect(responseBody[1])
+        expect(responseBody[7])
           .to.be.an('object')
-          .that.includes({ id: 2000, user_id: 2000, department: 'Second Department', product: 'Second Product', price: 2000 });
+          .that.includes({ user_id: 2000, department: 'Second Department', product: 'Second Product', price: 2000 });
 
         // The `done` function is used to end any asynchronous tests
         done();
