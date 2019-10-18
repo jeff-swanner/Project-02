@@ -42,37 +42,37 @@ module.exports = (db) => {
     isAdmin: true
   });
   db.Item.create({
-    user_id: 6,
+    UserId: 6,
     department: 'shoes',
     product: 'Sandals',
     price: 45
   });
   db.Item.create({
-    user_id: 6,
+    UserId: 6,
     department: 'dresses',
     product: 'A-line',
     price: 66
   });
   db.Item.create({
-    user_id: 4,
+    UserId: 4,
     department: 'shoes',
     product: 'Boots',
     price: 88
   });
   db.Item.create({
-    user_id: 3,
+    UserId: 3,
     department: 'accessories',
     product: 'Belt',
     price: 20
   });
   db.Item.create({
-    user_id: 5,
+    UserId: 5,
     department: 'pants',
     product: 'Slacks',
     price: 50
   });
   db.Item.create({
-    user_id: 5,
+    UserId: 5,
     department: 'shirts',
     product: 'Graphic Shirt',
     price: 15

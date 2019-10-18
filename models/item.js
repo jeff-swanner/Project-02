@@ -6,11 +6,11 @@ module.exports = function (sequelize, DataTypes) {
       primaryKey: true,
       allowNull: false
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      foreignKey: true,
-      allowNull: false
-    },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   foreignKey: true,
+    //   allowNull: false
+    // },
     department: {
       type: DataTypes.STRING
     },
@@ -20,6 +20,19 @@ module.exports = function (sequelize, DataTypes) {
     price: {
       type: DataTypes.INTEGER
     }
+  },
+  {
+    timestamps: true
   });
+
+  // Relations
+  Item.associate = function (models) {
+    Item.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: true
+      }
+    });
+  };
+
   return Item;
 };

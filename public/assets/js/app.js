@@ -5,20 +5,37 @@ $('#add-user').on('click', function (event) {
     firstName: $('#inputFirst').val().trim(),
     lastName: $('#inputLast').val().trim(),
     email: $('#inputEmail').val().trim(),
-    password: $('#inputPassword').val().trim()
+    password: $('#inputPassword').val().trim(),
+    agree: $('#user-agree').val().trim()
   };
 
-  if (newAccount.password.length > 0 && newAccount.email.length > 0 && newAccount.password.length > 0 && newAccount.lastName.length > 0 && newAccount.firstName.length > 0) {
+  console.log(newAccount);
+
+  if (newAccount.password.length > 0 && newAccount.email.length > 0 && newAccount.password.length > 0 && newAccount.lastName.length > 0 && newAccount.firstName.length > 0 && newAccount.agree === 'on') {
     $.ajax({
       type: 'POST',
       url: '/api/register',
       data: newAccount
     }).then(() => {
-      window.location.href = '/';
+      const user = {
+        email: $('#inputEmail').val().trim(),
+        password: $('#inputPassword').val().trim()
+      };
+      // adding to db and then also logging them in
+      $.post('/api/login', user, (result) => {
+        console.log(result);
+        if (result.loggedIn) {
+          $(document.location).attr('href', '/dashboard');
+        } else {
+          $('#login-err-msg').empty('').text(result.error);
+          $('#user-info').modal('hide');
+        }
+      });
+      // window.location.href = '/dashboard';
     });
   } else {
-    console.log('**Please fill out entire form**');
-    $('#create-err-msg').empty('').text('**Please fill out entire form**');
+    console.log('**Please fill out entire form and agree to the terms and conditions**');
+    $('#create-err-msg').empty('').text('**Please fill out entire form and agree to the terms and conditions**');
   }
 });
 

@@ -2,11 +2,10 @@
   <div class="ui container">
     <div class="left menu">
       <a href="/" class="item" id="main-logo">FASHION TRADER</a>
-      <a href="/" class="item"><i class="home icon"></i>Home</a>
-      <a href="/shop" class="item"><i class="tags icon"></i>Shop</a>
     </div>
     <div class="right menu">
       {{#if isloggedin}}
+        <a href="/shop" class="item"><i class="tags icon"></i>Shop</a>
         <a class="item" href="/item"><i class="tshirt icon"></i>My Items</a>
         <a class="item" href="/profile"><i class="user icon"></i>My Profile</a>
         <a class="item" href="/logout"><i class="sign out alternate icon"></i>Logout</a>
