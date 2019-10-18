@@ -11,7 +11,7 @@ module.exports = (db) => {
       console.log('test1');
       res.render('dashboard', user);
     } else {
-      console.log('test2'); 
+      console.log('test2');
       res.render('dashboard');
     }
   });
