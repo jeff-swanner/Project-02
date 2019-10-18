@@ -39,11 +39,11 @@ describe('GET /api/items', function () {
           .to.be.an('array')
           .that.has.lengthOf(8);
 
-        expect(responseBody[6])
+        expect(responseBody[0])
           .to.be.an('object')
           .that.includes({ user_id: 1000, department: 'First Department', product: 'First Product', price: 1000 });
 
-        expect(responseBody[7])
+        expect(responseBody[1])
           .to.be.an('object')
           .that.includes({ user_id: 2000, department: 'Second Department', product: 'Second Product', price: 2000 });
 
