@@ -5,13 +5,12 @@ $('#add-user').on('click', function (event) {
     firstName: $('#inputFirst').val().trim(),
     lastName: $('#inputLast').val().trim(),
     email: $('#inputEmail').val().trim(),
-    password: $('#inputPassword').val().trim(),
-    agree: $('#user-agree').val().trim()
+    password: $('#inputPassword').val().trim()
   };
 
   console.log(newAccount);
 
-  if (newAccount.password.length > 0 && newAccount.email.length > 0 && newAccount.password.length > 0 && newAccount.lastName.length > 0 && newAccount.firstName.length > 0 && newAccount.agree === 'on') {
+  if (newAccount.email.length > 0 && newAccount.password.length > 0 && newAccount.lastName.length > 0 && newAccount.firstName.length > 0) {
     $.ajax({
       type: 'POST',
       url: '/api/register',

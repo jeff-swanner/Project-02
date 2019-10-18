@@ -9,10 +9,10 @@ module.exports = (db) => {
         isloggedin: req.isAuthenticated()
       };
       console.log('test1');
-      res.render('dashboard', user);
+      res.render('register', user);
     } else {
       console.log('test2');
-      res.render('dashboard');
+      res.render('register');
     }
   });
 
