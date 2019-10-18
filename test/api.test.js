@@ -36,8 +36,8 @@ describe('GET /api/items', function () {
         expect(responseStatus).to.equal(200);
 
         expect(responseBody)
-          .to.be.an('array')
-          // .that.has.lengthOf(2);
+          .to.be.an('array');
+        // .that.has.lengthOf(2);
 
         expect(responseBody[0])
           .to.be.an('object')
