@@ -14,7 +14,21 @@ $('#add-user').on('click', function (event) {
       url: '/api/register',
       data: newAccount
     }).then(() => {
-      window.location.href = '/';
+      const user = {
+        email: $('#inputEmail').val().trim(),
+        password: $('#inputPassword').val().trim()
+      };
+      // adding to db and then also logging them in
+      $.post('/api/login', user, (result) => {
+        console.log(result);
+        if (result.loggedIn) {
+          $(document.location).attr('href', '/dashboard');
+        } else {
+          $('#login-err-msg').empty('').text(result.error);
+          $('#user-info').modal('hide');
+        }
+      });
+      // window.location.href = '/dashboard';
     });
   } else {
     console.log('**Please fill out entire form**');

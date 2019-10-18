@@ -4,9 +4,15 @@ module.exports = (db) => {
   // Load register page
   router.get('/register', (req, res) => {
     if (req.isAuthenticated()) {
-      res.redirect('/profile');
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      console.log('test1');
+      res.render('dashboard', user);
     } else {
-      res.render('register');
+      console.log('test2');
+      res.render('dashboard');
     }
   });
 
