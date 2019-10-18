@@ -8,9 +8,7 @@ $('#add-user').on('click', function (event) {
     password: $('#inputPassword').val().trim()
   };
 
-  console.log(newAccount);
-
-  if (newAccount.email.length > 0 && newAccount.password.length > 0 && newAccount.lastName.length > 0 && newAccount.firstName.length > 0) {
+  if (newAccount.password.length > 0 && newAccount.email.length > 0 && newAccount.password.length > 0 && newAccount.lastName.length > 0 && newAccount.firstName.length > 0) {
     $.ajax({
       type: 'POST',
       url: '/api/register',
@@ -33,8 +31,8 @@ $('#add-user').on('click', function (event) {
       // window.location.href = '/dashboard';
     });
   } else {
-    console.log('**Please fill out entire form and agree to the terms and conditions**');
-    $('#create-err-msg').empty('').text('**Please fill out entire form and agree to the terms and conditions**');
+    console.log('**Please fill out entire form**');
+    $('#create-err-msg').empty('').text('**Please fill out entire form**');
   }
 });
 
