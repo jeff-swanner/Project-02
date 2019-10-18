@@ -1,55 +1,56 @@
 {{> nav/nav-block isloggedin=true}}
 
-<div class="ui masthead" id="item-container">
-  <div class="ui raised very padded text container segment">
-    <header class="ui header">
-      <h1>{{msg}}</h1>
-    </header>
-    <form class="ui centered form" action="POST">
-      <div class="field">
-        <label for="ui selection dropdown">Choose A Category</label>
-        <div class="ui selection dropdown">
-          <input type="hidden" name="category" id="item-category">
-          <i class="dropdown icon"></i>
-          <div class="default text">Category
-          </div>
-          <div class="menu">
-            <div class="item" data-value="coats">Coats</div>
-            <div class="item" data-value="pants">Pants</div>
-            <div class="item" data-value="dresses">Dresses</div>
-            <div class="item" data-value="shirts">Shirts</div>
-            <div class="item" data-value="shoes">Shoes</div>
-            <div class="item" data-value="accessories">Accessories</div>
+<div class="ui container">
+  <div class="ui masthead" id="item-container">
+    <div class="ui raised very padded text container segment">
+      <header class="ui header">
+        <h1 align="center">{{msg}}</h1>
+      </header>
+      <form class="ui centered form" action="POST">
+        <div class="field">
+          <label for="ui selection dropdown">Choose A Category</label>
+          <div class="ui selection dropdown">
+            <input type="hidden" name="category" id="item-category">
+            <i class="dropdown icon"></i>
+            <div class="default text">Category
+            </div>
+            <div class="menu">
+              <div class="item" data-value="coats">Coats</div>
+              <div class="item" data-value="pants">Pants</div>
+              <div class="item" data-value="dresses">Dresses</div>
+              <div class="item" data-value="shirts">Shirts</div>
+              <div class="item" data-value="shoes">Shoes</div>
+              <div class="item" data-value="accessories">Accessories</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="field">
-        <label for="item-post">Item Name</label>
-        <input type="text" id="item-name" name="item name" placeholder="Item Name">
-      </div>
-      <div class="field" id="item-entry">
-        <label for="item-post">Item Price</label>
-        <input type="text" id="item-price" name="item name" placeholder="Item Price">
-      </div>
-      <div class="ui large teal submit button" id="submit"><i class="plus icon"></i>Submit Item</div>
-    </form>
+        <div class="field">
+          <label for="item-post">Item Name</label>
+          <input type="text" id="item-name" name="item name" placeholder="Item Name">
+        </div>
+        <div class="field" id="item-entry">
+          <label for="item-post">Item Price</label>
+          <input type="text" id="item-price" name="item name" placeholder="Item Price">
+        </div>
+        <div class="ui large teal submit button" id="submit"><i class="plus icon"></i>Submit Item</div>
+      </form>
+      <hr class="ui section divider">
+        <h1 class="header">My Items:</h1>     
+        <ul class="ui list" id="item-list">
+        {{#each items}}
+          <li data-id="{{this.id}}" class="ui list item">
+            <a href="/item/{{this.id}}">{{this.id}}</a>
+            <button class="ui button negative" id="delete">ｘ</button>
+          </li>
+      {{/each}}
+    </ul>
   </div>
 </div>
-<h1>My Items:</h1>     
-  <ul class="ui list" id="item-list">
-    {{#each items}}
-        <li data-id="{{this.id}}" class="ui list item">
-          <a href="/item/{{this.id}}">{{this.id}}</a>
-          <button class="ui button negative" id="delete">ｘ</button>
-        </li>
-    {{/each}}
-  </ul>
+</div>
 
 <script>
   $('.ui.dropdown')
   .dropdown();
 </script>
 <script src="/assets/js/items.js"></script>
-
-{{> modal/login-block}}
 

@@ -1,18 +1,21 @@
 {{> nav/nav-block user=true register=false}}
 
-<div class="ui masthead" id="profile-container">
-  <div class="ui large card" align="center">
+<div class="ui container" align="center">
+<div class="ui masthead">
+
+  <div class="ui yellow message" align="center">
     <header class="ui header">
-      <h1>My Fashion Trader Profile</h1>
+      <h3>My Fashion Trader Profile</h3>
     </header>
     <div class="userId">
-      <h3>Welcome, {{userInfo.firstName}}</h3>
-      <h5 id="user-number" data-useremail="{{userInfo.email}}">Account email: {{userInfo.email}}</h5>
+      <h1>Welcome, {{userInfo.firstName}}</h1>
+      <h4 id="user-number" data-useremail="{{userInfo.email}}">Account email: {{userInfo.email}}</h4>
     </div>
   </div>
-  <div class="ui raised very padded text container segment">
+  <div class="ui raised padded text container segment" align="left">
     
     <h3 id="update-err-msg"></h3>
+    <h2 class="header" align="center">Update My Profile</h2>
     <form class="ui centered form" id="user-form">
       <div class="field">
         <label for="inputFirst">First Name</label>
@@ -40,6 +43,7 @@
     <button class="ui button" type="submit" id="view-user" data-id="{{userInfo.id}}"><i class="redo icon"></i>
       Refresh</button>
   </div>
+
 
   <div class="ui modal" id="delete-user-modal" tabindex="-1" role="dialog">
     <div class="header">
@@ -70,3 +74,4 @@
         </div>
       </div>
     </div>
+</div>
