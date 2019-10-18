@@ -6,7 +6,8 @@ module.exports = (passport, db) => {
   const AppController = require('../controllers/appController')(db);
 
   // Authentication
-  router.post('/register', AuthController.register);
+  router.post('/', AuthController);
+  router.post('/register', AuthController.login);
   router.post('/login', AuthController.login);
   router.get('/logout', AuthController.logout);
   router.put('/user/:id', ensureAuthenticated, AuthController.updateUser);
