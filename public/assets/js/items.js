@@ -60,9 +60,10 @@ const API = {
 
 const refreshItems = function () {
   API.getItems().then(function (data) {
+    console.log(data);
     const $items = data.map(function (item) {
       const $a = $('<a>')
-        .text(item.text)
+        .text(item.product)
         .attr('href', '/item/' + item.id);
 
       const $li = $('<li>')
@@ -73,7 +74,7 @@ const refreshItems = function () {
         .append($a);
 
       const $button = $('<button>')
-        .addClass('ui button negative')
+        .addClass('ui button negative delete')
         .text('ｘ');
 
       $li.append($button);
@@ -118,7 +119,11 @@ const handleFormSubmit = function (event) {
 const handleDeleteBtnClick = function () {
   const idToDelete = $(this).parent().attr('data-id');
 
-  API.deleteitem(idToDelete).then(function () {
+  console.log(idToDelete);
+
+  console.log('click');
+
+  API.deleteItem(idToDelete).then(function () {
     refreshItems();
   });
 };
@@ -126,3 +131,5 @@ const handleDeleteBtnClick = function () {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
 $itemList.on('click', '.delete', handleDeleteBtnClick);
+
+refreshItems();

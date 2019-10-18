@@ -36,12 +36,12 @@
   </div>
 </div>
 <h1>My Items:</h1>     
-  <ul id="item-list" class="ui list">
-    {{#each items}}      
-      <li data-id="{{this.id}}" class="ui list item">
-        <a href="example/{{this.id}}">{{this.text}}</a>
-        <button class="ui button negative">ｘ</button>
-      </li>
+  <ul class="ui list" id="item-list">
+    {{#each items}}
+        <li data-id="{{this.id}}" class="ui list item">
+          <a href="/item/{{this.id}}">{{this.id}}</a>
+          <button class="ui button negative" id="delete">ｘ</button>
+        </li>
     {{/each}}
   </ul>
 

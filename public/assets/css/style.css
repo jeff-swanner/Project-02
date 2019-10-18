@@ -66,6 +66,10 @@ body {
   padding-top: 132px;
 }
 
+#item-container {
+  padding-top: 132px;
+}
+
 #user-form, .header-wrap, #create-form, .create-user-wrap {
   padding: 0;
   border-radius: 15px;
