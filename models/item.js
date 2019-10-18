@@ -26,13 +26,13 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   // Relations
-  Item.associate = function (models) {
-    Item.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: true
-      }
-    });
-  };
+  // Item.associate = function (models) {
+  //   Item.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: true
+  //     }
+  //   });
+  // };
 
   return Item;
 };

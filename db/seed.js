@@ -41,40 +41,40 @@ module.exports = (db) => {
     password: 'mnop',
     isAdmin: true
   });
-  db.Item.create({
-    UserId: 6,
-    department: 'shoes',
-    product: 'Sandals',
-    price: 45
-  });
-  db.Item.create({
-    UserId: 6,
-    department: 'dresses',
-    product: 'A-line',
-    price: 66
-  });
-  db.Item.create({
-    UserId: 4,
-    department: 'shoes',
-    product: 'Boots',
-    price: 88
-  });
-  db.Item.create({
-    UserId: 3,
-    department: 'accessories',
-    product: 'Belt',
-    price: 20
-  });
-  db.Item.create({
-    UserId: 5,
-    department: 'pants',
-    product: 'Slacks',
-    price: 50
-  });
-  db.Item.create({
-    UserId: 5,
-    department: 'shirts',
-    product: 'Graphic Shirt',
-    price: 15
-  });
+  // db.Item.create({
+  //   UserId: 6,
+  //   department: 'shoes',
+  //   product: 'Sandals',
+  //   price: 45
+  // });
+  // db.Item.create({
+  //   UserId: 6,
+  //   department: 'dresses',
+  //   product: 'A-line',
+  //   price: 66
+  // });
+  // db.Item.create({
+  //   UserId: 4,
+  //   department: 'shoes',
+  //   product: 'Boots',
+  //   price: 88
+  // });
+  // db.Item.create({
+  //   UserId: 3,
+  //   department: 'accessories',
+  //   product: 'Belt',
+  //   price: 20
+  // });
+  // db.Item.create({
+  //   UserId: 5,
+  //   department: 'pants',
+  //   product: 'Slacks',
+  //   price: 50
+  // });
+  // db.Item.create({
+  //   UserId: 5,
+  //   department: 'shirts',
+  //   product: 'Graphic Shirt',
+  //   price: 15
+  // });
 };

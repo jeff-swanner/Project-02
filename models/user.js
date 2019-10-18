@@ -39,12 +39,12 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   // Relations
-  User.associate = function (models) {
-    User.hasMany(models.Item, {
-      onDelete: 'cascade',
-      constraints: true
-    });
-  };
+  // User.associate = function (models) {
+  //   User.hasMany(models.Item, {
+  //     onDelete: 'cascade',
+  //     constraints: true
+  //   });
+  // };
 
   // This will check if an unhashed password can be compared to the hashed password stored in our database
   User.prototype.validPassword = function (password) {
