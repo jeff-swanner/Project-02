@@ -20,8 +20,8 @@ describe('GET /api/items', function () {
   it('should find all items', function (done) {
     // Add some items to the db to test with
     db.Item.bulkCreate([
-      { id: 1000, user_id: 1000, department: 'First Department', product: 'First Product', price: 1000 },
-      { id: 2000, user_id: 2000, department: 'Second Department', product: 'Second Product', price: 2000 }
+      { user_id: 1000, department: 'First Department', product: 'First Product', price: 1000 },
+      { user_id: 2000, department: 'Second Department', product: 'Second Product', price: 2000 }
     ]).then(function () {
       // Request the route that returns all items
       request.get('/api/items').end(function (err, res) {
