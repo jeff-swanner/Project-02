@@ -12,7 +12,7 @@ ___
 
 ## Demo
 
-To use Fashion Trader, navigate to the depolyed Heroku page [here](#). Simply click the links to create an account, fill out the account form, and begin!
+To use Fashion Trader, navigate to the depolyed Heroku page [here](https://project-02-2019.herokuapp.com/). Simply click the links to create an account, fill out the account form, and begin!
 
 ___
 
