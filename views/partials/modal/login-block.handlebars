@@ -1,66 +1,39 @@
-{{!-- <div class="ui modal" id="user-info" tabindex="-1" role="dialog">
-  <div class="column">
-    <h2 class="ui teal header block" align="center">
-      <div class="content">
-        Log In To Your Acccount
-      </div>
-    </h2>
-    <form class="ui large form">
-      <div class="ui stacked segment">
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="user icon"></i>
-            <input type="text" id="user-email" name="email" placeholder="Email Address">
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
-            <input type="password" id="user-password" name="password" placeholder="Password">
-          </div>
-        </div>
-        <div class="ui teal large submit button" id="login">Login</div>
-      </div>
-    </form>
-    <div class="ui footer" align="center">
-      <div class="ui message">
-        New to us?
-        <a href="/register">Sign Up</a>
-      </div>
-    </div>
-  </div>
-</div> --}}
-
+{{!-- Login Modal --}}
 <div class="ui modal" id="user-info" tabindex="-1" role="dialog">
-<div class="ui placeholder segment">
-  <div class="ui two column very relaxed stackable grid">
-    <div class="column">
-      <div class="ui form">
-        <div class="field">
-          <label>Email</label>
-          <div class="ui left icon input">
-            <input type="text" id="user-email" name="email" placeholder="Email Address">
-            <i class="user icon"></i>
+  <div class="ui placeholder segment">
+    <div class="ui two column very relaxed stackable grid">
+      
+      {{!-- Login Form --}}
+      <div class="column">
+        <div class="ui form">
+          <div class="field">
+            <label>Email</label>
+            <div class="ui left icon input">
+              <input type="text" id="user-email" name="email" placeholder="Email Address">
+              <i class="user icon"></i>
+            </div>
           </div>
-        </div>
-        <div class="field">
-          <label>Password</label>
-          <div class="ui left icon input">
-            <input type="password" id="user-password" name="password">
-            <i class="lock icon"></i>
+          <div class="field">
+            <label>Password</label>
+            <div class="ui left icon input">
+              <input type="password" id="user-password" name="password">
+              <i class="lock icon"></i>
+            </div>
           </div>
+          <button class="ui teal submit button" type="submit" id="login">Login</button>
         </div>
-        <button class="ui teal submit button" type="submit" id="login">Login</button>
       </div>
+
+      {{!-- Sign Up Button --}}
+      <div class="middle aligned column">
+        <a href="/register"><button class="ui huge button" type="submit"><i class="signup icon"></i>
+          Sign Up</button>
+        </a>
+      </div>
+
     </div>
-    <div class="middle aligned column">
-      <a href="/register"><button class="ui huge button" type="submit"><i class="signup icon"></i>
-        Sign Up
-      </button></a>
+    <div class="ui vertical divider">
+      Or
     </div>
   </div>
-  <div class="ui vertical divider">
-    Or
-  </div>
-</div>
 </div>

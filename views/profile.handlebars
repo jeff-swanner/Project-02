@@ -1,22 +1,23 @@
 {{> nav/nav-block user=true register=false}}
 
+{{!-- User Profile Page Body --}}
 <div class="ui container" align="center">
-<div class="ui masthead">
-
-  <div class="ui yellow message" align="center">
-    <header class="ui header">
+  <div class="ui masthead">
+    <div class="ui yellow message" align="center">
+      <header class="ui header">
       <h3>My Fashion Trader Profile</h3>
-    </header>
-    <div class="userId">
-      <h1>Welcome, {{userInfo.firstName}}</h1>
-      <h4 id="user-number" data-useremail="{{userInfo.email}}">Account email: {{userInfo.email}}</h4>
+      </header>
+      <div class="userId">
+        <h1>Welcome, {{userInfo.firstName}}</h1>
+        <h4 id="user-number" data-useremail="{{userInfo.email}}">Account email: {{userInfo.email}}</h4>
+      </div>
     </div>
-  </div>
-  <div class="ui raised padded text container segment" align="left">
-    
-    <h3 id="update-err-msg"></h3>
-    <h2 class="header" align="center">Update My Profile</h2>
-    <form class="ui centered form" id="user-form">
+
+    {{!-- Update Profile Form Card --}}
+    <div class="ui raised padded text container segment" align="left">
+      <h3 id="update-err-msg"></h3>
+      <h2 class="header" align="center">Update My Profile</h2>
+      <form class="ui centered form" id="user-form">
       <div class="field">
         <label for="inputFirst">First Name</label>
         <input type="text" id="inputFirst" value="" placeholder="John">
@@ -35,43 +36,40 @@
       </div>
     </form>
     <br>
-  <button class="ui teal button" type="submit" id="update-user" data-id="{{userInfo.id}}">
-    <i class="edit icon"></i>Update</button>
-    {{#unless userInfo.isAdmin}}
-      <button class="ui negative button" type="submit" id="delete-user"><i class="trash icon"></i>Delete</button>
-    {{/unless}}
-    <button class="ui button" type="submit" id="view-user" data-id="{{userInfo.id}}"><i class="redo icon"></i>
+    <button class="ui teal button" type="submit" id="update-user" data-id="{{userInfo.id}}">
+      <i class="edit icon"></i>Update</button>
+      {{#unless userInfo.isAdmin}}
+        <button class="ui negative button" type="submit" id="delete-user"><i class="trash icon"></i>Delete</button>
+      {{/unless}}
+      <button class="ui button" type="submit" id="view-user" data-id="{{userInfo.id}}"><i class="redo icon"></i>
       Refresh</button>
-  </div>
-
-
-  <div class="ui modal" id="delete-user-modal" tabindex="-1" role="dialog">
-    <div class="header">
-      <h5>Re-Enter Credentials</h5>
     </div>
-    <div class="content">
-      {{!-- <button type="ui button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button> --}}
-      <h3 id="err-msg"></h3>
-      <div class="4 wide column">
-        <form class="ui centered form">
-          <div class="field">
-            <label for="userEmail">Email:</label>
-            <input type="text" class="form-control" id="userEmail">
-          </div>
-          <div class="field">
-            <label for="userPassword">Password:</label>
-            <input type="password" class="form-control" id="userPassword">
-          </div>
-        </form>
+
+    {{!-- Modal for Deleting User Account --}}
+    <div class="ui modal" id="delete-user-modal" tabindex="-1" role="dialog">
+      <div class="header">
+        <h5>Re-Enter Credentials</h5>
       </div>
-    </div>
-
-        <div class="actions" align="left">
-          <button class="ui negative button" id="confirm-delete" type="submit" align="left" data-id="{{userInfo.id}}">Confirm Delete</button>
-          <button class="ui teal button" type="button" align="left" data-dismiss="modal">Nevermind</button>
+      <div class="content">
+        <h3 id="err-msg"></h3>
+        <div class="4 wide column">
+          <form class="ui centered form">
+            <div class="field">
+              <label for="userEmail">Email:</label>
+              <input type="text" class="form-control" id="userEmail">
+            </div>
+            <div class="field">
+              <label for="userPassword">Password:</label>
+              <input type="password" class="form-control" id="userPassword">
+            </div>
+          </form>
         </div>
       </div>
+      <div class="actions" align="left">
+        <button class="ui negative button" id="confirm-delete" type="submit" align="left" data-id="{{userInfo.id}}">Confirm Delete</button>
+        <button class="ui teal button" type="button" align="left" data-dismiss="modal">Nevermind</button>
+      </div>
     </div>
+    
+  </div>
 </div>
