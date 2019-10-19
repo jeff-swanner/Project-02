@@ -32,22 +32,49 @@ const API = {
 };
 
 // refreshItemss gets new itemss from the db and repopulates the list
+// const refreshItems = function () {
+//   API.getItems().then(function (data) {
+//     data.forEach(function (item) {
+//       if(item.)
+//       const $Items = data.map(function (item) {
+//         const $tr = $('<tr>').text(item.product).attr('href', '/item/' + item.id);
+
+//         const $td = $('<td>').attr({
+//           'data-id': item.id
+//         }).append($tr);
+
+//         const $button = $('<button>').addClass('ui button').text('ｘ');
+
+//         $td.append($button);
+
+//         console.log($Items);
+
+//         $itemList.empty();
+//         $itemList.append($Items);
+
+//         return $tr;
+//       });
+//     });
+//   });
+// };
+
 const refreshItems = function () {
   API.getItems().then(function (data) {
-    const $Items = data.map(function (item) {
+    console.log(data);
+    const $items = data.map(function (item) {
       const $a = $('<a>')
         .text(item.product)
         .attr('href', '/item/' + item.id);
 
       const $li = $('<li>')
         .attr({
-          class: 'list-group-item',
+          class: 'ui list item',
           'data-id': item.id
         })
         .append($a);
 
       const $button = $('<button>')
-        .addClass('ui button')
+        .addClass('ui button negative delete')
         .text('ｘ');
 
       $li.append($button);
@@ -55,10 +82,8 @@ const refreshItems = function () {
       return $li;
     });
 
-    console.log($Items);
-
     $itemList.empty();
-    $itemList.append($Items);
+    $itemList.append($items);
   });
 };
 
@@ -94,7 +119,11 @@ const handleFormSubmit = function (event) {
 const handleDeleteBtnClick = function () {
   const idToDelete = $(this).parent().attr('data-id');
 
-  API.deleteitem(idToDelete).then(function () {
+  console.log(idToDelete);
+
+  console.log('click');
+
+  API.deleteItem(idToDelete).then(function () {
     refreshItems();
   });
 };
@@ -102,3 +131,5 @@ const handleDeleteBtnClick = function () {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
 $itemList.on('click', '.delete', handleDeleteBtnClick);
+
+refreshItems();

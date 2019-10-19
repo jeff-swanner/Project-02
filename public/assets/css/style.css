@@ -58,11 +58,15 @@ body {
   padding-top: 132px;
 }
 
-#profile-container {
-  padding-top: 132px;
+#welcome-card {
+  background-color: gold;
 }
 
 #register-container {
+  padding-top: 132px;
+}
+
+#item-container {
   padding-top: 132px;
 }
 

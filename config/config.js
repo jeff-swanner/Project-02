@@ -12,7 +12,7 @@ module.exports = {
   test: {
     username: process.env.TU,
     password: process.env.TP || null,
-    database: 'fashion_trader',
+    database: 'testdb',
     details: {
       host: 'localhost',
       port: 3306,

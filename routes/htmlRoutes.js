@@ -9,10 +9,10 @@ module.exports = (db) => {
         isloggedin: req.isAuthenticated()
       };
       console.log('test1');
-      res.render('dashboard', user);
+      res.render('register', user);
     } else {
       console.log('test2');
-      res.render('dashboard');
+      res.render('register');
     }
   });
 
@@ -67,7 +67,7 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Item.findAll({}).then(function (dbItems) {
         res.render('item', {
-          msg: 'My Fashion Trader Dashboard',
+          msg: 'My Fashion Trader Items',
           item: dbItems
         });
       });

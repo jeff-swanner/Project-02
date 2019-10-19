@@ -1,15 +1,21 @@
 {{> nav/nav-block user=true register=false}}
 
-<div class="ui masthead" id="profile-container">
-  <div class="ui raised very padded text container segment">
+<div class="ui container" align="center">
+<div class="ui masthead">
+
+  <div class="ui yellow message" align="center">
     <header class="ui header">
-      <h1>My Fashion Trader Profile</h1>
+      <h3>My Fashion Trader Profile</h3>
     </header>
     <div class="userId">
-      <h3>Welcome, {{userInfo.firstName}}</h3>
-      <h5 id="user-number" data-useremail="{{userInfo.email}}">Account email: {{userInfo.email}}</h5>
+      <h1>Welcome, {{userInfo.firstName}}</h1>
+      <h4 id="user-number" data-useremail="{{userInfo.email}}">Account email: {{userInfo.email}}</h4>
     </div>
+  </div>
+  <div class="ui raised padded text container segment" align="left">
+    
     <h3 id="update-err-msg"></h3>
+    <h2 class="header" align="center">Update My Profile</h2>
     <form class="ui centered form" id="user-form">
       <div class="field">
         <label for="inputFirst">First Name</label>
@@ -38,34 +44,34 @@
       Refresh</button>
   </div>
 
+
   <div class="ui modal" id="delete-user-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Re-Enter Credentials to delete user</h5>
-          <button type="ui button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
+    <div class="header">
+      <h5>Re-Enter Credentials</h5>
+    </div>
+    <div class="content">
+      {{!-- <button type="ui button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button> --}}
+      <h3 id="err-msg"></h3>
+      <div class="4 wide column">
+        <form class="ui centered form">
+          <div class="field">
+            <label for="userEmail">Email:</label>
+            <input type="text" class="form-control" id="userEmail">
+          </div>
+          <div class="field">
+            <label for="userPassword">Password:</label>
+            <input type="password" class="form-control" id="userPassword">
+          </div>
+        </form>
+      </div>
+    </div>
 
-        <div class="modal-body">
-          <h3 id="err-msg"></h3>
-          <form>
-            <div class="form-group">
-              <label for="userEmail">Email:</label>
-              <input type="text" class="form-control" id="userEmail">
-            </div>
-            <div class="form-group">
-              <label for="userPassword">Password:</label>
-              <input type="password" class="form-control" id="userPassword">
-            </div>
-          </form>
-        </div>
-
-        <div class="modal-footer">
-          <div class="ui button" id="confirm-delete" type="button" data-id="{{userInfo.id}}">Confirm Delete</div>
-          <div class="ui button" type="button" data-dismiss="modal">Nah I'll stay</div>
+        <div class="actions" align="left">
+          <button class="ui negative button" id="confirm-delete" type="submit" align="left" data-id="{{userInfo.id}}">Confirm Delete</button>
+          <button class="ui teal button" type="button" align="left" data-dismiss="modal">Nevermind</button>
         </div>
       </div>
     </div>
-  </div>
+</div>
