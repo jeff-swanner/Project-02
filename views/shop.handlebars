@@ -1,100 +1,99 @@
 {{> nav/nav-block isloggedin=true}}
 
+{{!-- Shop Page Video --}}
 <video autoplay muted loop id="myVideo">
   <source src="/assets/images/video2.mp4" type="video/mp4">
 </video>
 
+{{!-- Shop Page Body, containing cards for each category of item--}}
 <div class="ui container" id="shop-container">
-
-<div id="storeCategories">
-  <div class="ui three column grid">
-    <div class="column">
-      <a href="#" class="storeCategories" data-category="accessories">
-        <div class="ui fluid card">
-          <div class="image">
-            <img src="/assets/img/accessories.jpg">
+  <div id="storeCategories">
+    <div class="ui three column grid">
+      <div class="column">
+        <a href="#" class="storeCategories" data-category="accessories">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/assets/img/accessories.jpg">
+            </div>
+            <div class="content">
+              <div class="header">Accessories</div>
+            </div>
           </div>
-          <div class="content">
-            <div class="header">Accessories</div>
-          </div>
+          </a>
         </div>
-      </a>
+        <div class="column">
+          <a href="#" class="storeCategories" data-category="coats">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/assets/img/coat.jpg">
+            </div>
+            <div class="content">
+              <div class="header">Coats</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="storeCategories" data-category="dresses">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/assets/img/dress.jpg">
+            </div>
+            <div class="content">
+              <div class="header">Dresses</div>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="column">
-      <a href="#" class="storeCategories" data-category="coats">
-        <div class="ui fluid card">
-          <div class="image">
-            <img src="/assets/img/coat.jpg">
+    <div class="ui three column grid">
+      <div class="column">
+        <a href="#" class="storeCategories" data-category="pants">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/assets/img/pants.jpg">
+            </div>
+            <div class="content">
+              <div class="header">Pants</div>
+            </div>
           </div>
-          <div class="content">
-            <div class="header">Coats</div>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="storeCategories" data-category="shirts">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/assets/img/shirts.jpeg">
+            </div>
+            <div class="content">
+              <div class="header">Shirts</div>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-    <div class="column">
-      <a href="#" class="storeCategories" data-category="dresses">
-        <div class="ui fluid card">
-          <div class="image">
-            <img src="/assets/img/dress.jpg">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="storeCategories" data-category="shoes">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/assets/img/shoes.jpg">
+            </div>
+            <div class="content">
+              <div class="header">Shoes</div>
+            </div>
           </div>
-          <div class="content">
-            <div class="header">Dresses</div>
-          </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   </div>
-  <div class="ui three column grid">
-    <div class="column">
-      <a href="#" class="storeCategories" data-category="pants">
-        <div class="ui fluid card">
-          <div class="image">
-            <img src="/assets/img/pants.jpg">
-          </div>
-          <div class="content">
-            <div class="header">Pants</div>
-          </div>
+  <div class="productDisplay transition hidden">
+    <div class="ui centered grid">
+      <div class="twelve wide stretched column">
+        <div id="storeCards" class="ui link cards">
         </div>
-      </a>
-    </div>
-    <div class="column">
-      <a href="#" class="storeCategories" data-category="shirts">
-        <div class="ui fluid card">
-          <div class="image">
-            <img src="/assets/img/shirts.jpeg">
-          </div>
-          <div class="content">
-            <div class="header">Shirts</div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="column">
-      <a href="#" class="storeCategories" data-category="shoes">
-        <div class="ui fluid card">
-          <div class="image">
-            <img src="/assets/img/shoes.jpg">
-          </div>
-          <div class="content">
-            <div class="header">Shoes</div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="productDisplay transition hidden">
-  <div class="ui centered grid">
-    <div class="twelve wide stretched column">
-      <div id="storeCards" class="ui link cards">
       </div>
     </div>
   </div>
 </div>
-</div>
-
 
 
 <script src="/assets/js/shop.js"></script>

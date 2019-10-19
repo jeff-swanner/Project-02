@@ -1,8 +1,13 @@
+{{!-- Navbar Layout --}}
 <div class="ui large menu inverted" id="navbar">
   <div class="ui container">
+    
+    {{!-- First Menu --}}
     <div class="left menu">
       <a href="/" class="item" id="main-logo">FASHION TRADER</a>
     </div>
+
+    {{!-- Logged In Menu --}}
     <div class="right menu">
       {{#if isloggedin}}
         <a href="/shop" class="item"><i class="tags icon"></i>Shop</a>
@@ -10,6 +15,8 @@
         <a class="item" href="/profile"><i class="user icon"></i>My Profile</a>
         <a class="item" href="/logout"><i class="sign out alternate icon"></i>Logout</a>
       {{else}}
+
+        {{!-- Menu Not Logged In --}}
         <div class="item">
           <a href="#" id="login-modal"><button class="ui large grey button"><i class="sign in alternate icon"></i>Log In</button></a>
         </div>
@@ -17,8 +24,10 @@
           <a href="/register"><button class="ui large teal button" data-register={{register}}><i class="user plus icon"></i>Sign Up</button></a>
         </div>
       {{/if}}
+
     </div>
   </div>
 </div>
 
+{{!-- Calling the login modal --}}
 {{> modal/login-block}}    

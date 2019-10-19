@@ -1,19 +1,21 @@
 {{> nav/nav-block isloggedin=true}}
 
+{{!-- Item List Body --}}
 <div class="ui container">
   <div class="ui masthead" id="item-container">
     <div class="ui raised very padded text container segment">
       <header class="ui header">
         <h1 align="center">{{msg}}</h1>
       </header>
+
+      {{!-- Item Post Form --}}
       <form class="ui centered form" action="POST">
         <div class="field">
           <label for="ui selection dropdown">Choose A Category</label>
           <div class="ui selection dropdown">
             <input type="hidden" name="category" id="item-category">
             <i class="dropdown icon"></i>
-            <div class="default text">Category
-            </div>
+            <div class="default text">Category</div>
             <div class="menu">
               <div class="item" data-value="coats">Coats</div>
               <div class="item" data-value="pants">Pants</div>
@@ -34,20 +36,23 @@
         </div>
         <div class="ui large teal submit button" id="submit"><i class="plus icon"></i>Submit Item</div>
       </form>
+
+    {{!-- Item List --}}
       <hr class="ui section divider">
-        <h1 class="header">My Items:</h1>     
-        <ul class="ui list" id="item-list">
+      <h1 class="header">My Items:</h1>     
+      <ul class="ui list" id="item-list">
         {{#each items}}
           <li data-id="{{this.id}}" class="ui list item">
             <a href="/item/{{this.id}}">{{this.id}}</a>
             <button class="ui button negative" id="delete">ｘ</button>
           </li>
-      {{/each}}
-    </ul>
+        {{/each}}
+      </ul>
+    </div>
   </div>
 </div>
-</div>
 
+{{!-- Script for the Dropdown Menu --}}
 <script>
   $('.ui.dropdown')
   .dropdown();

@@ -1,5 +1,6 @@
 {{> nav/nav-block user=false register=true}}
 
+{{!-- User Registration Page Body --}}
 <div class="ui masthead" id="register-container">
   <div class="ui raised very padded text container segment">
     <header class="ui header">
@@ -9,6 +10,7 @@
 
     <h3 id="err-msg"></h3>
 
+    {{!-- User Registration Form --}}
     <form class="ui form" id="create-form">
       <div class="field">
         <label for="inputFirst">First Name</label>
@@ -26,7 +28,6 @@
         <label for="inputPassword">Password</label>
         <input type="password" id="inputPassword" placeholder="Password">
       </div>
- 
       <div>
         <h2 id="message"></h2>
       </div>

@@ -1,8 +1,11 @@
 {{> nav/nav-block isloggedin=true}}
 
+{{!-- Item Page Body --}}
 <div class="ui container" id="item-container">
   <div class="ui row">
     <div class="eight wide column" align="center">
+
+      {{!-- Item Card --}}
       <div class="ui card" align="left">
         <div class="content">
           <h5 class="header">Item: </h5>
@@ -12,11 +15,12 @@
           <p>
             <strong>Product Name</strong>: {{item.product}}</p>
           <p>
-            <strong>Price:</strong> {{item.price}}</p>
+            <strong>Price</strong>: {{item.price}}</p>
             <a href="/item">← Back To My Items</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 {{> modal/login-block}}
